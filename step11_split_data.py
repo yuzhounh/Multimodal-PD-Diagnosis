@@ -212,8 +212,9 @@ def main():
     
     # 保存处理结果摘要
     results_df = pd.DataFrame(results)
-    results_df.to_csv('result_11_data_split_summary.csv', index=False)
-    print(f"\n处理摘要已保存至: result_11_data_split_summary.csv")
+    outfile = 'result_11_data_split_summary.csv'
+    results_df.to_csv(outfile, index=False)
+    print(f"\n处理摘要已保存至: {outfile}")
 
 
 if __name__ == "__main__":

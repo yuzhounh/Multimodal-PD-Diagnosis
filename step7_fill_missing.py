@@ -6,7 +6,8 @@ from scipy import stats
 df = pd.read_csv('PPMI_5_key_features.csv')
 
 # 创建一个日志文件记录填充信息
-log_file = open('result_7_fill_missing.txt', 'w', encoding='utf-8')
+log_file_name = 'result_7_fill_missing.txt'
+log_file = open(log_file_name, 'w', encoding='utf-8')
 log_file.write("缺失值填充日志\n")
 log_file.write("=" * 80 + "\n")
 
@@ -91,4 +92,4 @@ log_file.close()
 
 # 保存填充后的数据
 df.to_csv('PPMI_6_filled.csv', index=False)
-print(f"填充完成，共处理了 {total_nan_count} 个缺失值。详细信息请查看 6_fill_nan_log.txt")
+print(f"填充完成，共处理了 {total_nan_count} 个缺失值。详细信息请查看 {log_file_name}")
