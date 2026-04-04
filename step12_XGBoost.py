@@ -332,7 +332,7 @@ class XGBoostModel:
         
         return test_performance, y_prob
 
-def load_roi_mapping(roi_mapping_file='AAL3v1_with_flags.nii.csv'):
+def load_roi_mapping(roi_mapping_file='AAL3v1_with_flags.csv'):
     """加载 ROI 名称映射文件，将 ROI_{i} 映射为对应的脑区名称"""
     roi_df = pd.read_csv(roi_mapping_file)
     # 创建映射字典: ROI_{ID} -> Name
@@ -352,7 +352,7 @@ def process_single_dataset(train_file, test_file, feature_mapping_file, n_calls=
     train_data, test_data, feature_name_mapping = load_data(train_file, test_file, feature_mapping_file)
     
     # 加载 ROI 名称映射
-    roi_mapping = load_roi_mapping('AAL3v1_with_flags.nii.csv')
+    roi_mapping = load_roi_mapping('AAL3v1_with_flags.csv')
     
     X_train, y_train, subjects_train = prepare_data(train_data)
     X_test, y_test, subjects_test = prepare_data(test_data)
