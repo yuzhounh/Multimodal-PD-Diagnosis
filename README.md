@@ -58,7 +58,7 @@ PPMI_Curated_Data (Excel)
   └─ step12 ─→ results/（模型、指标、SHAP、ROC/PR 曲线）
 ```
 
-## 7 组特征集说明
+## 七组特征集说明
 
 | 编号 | 特征组合 | 描述 |
 |------|----------|------|
@@ -105,6 +105,8 @@ python main.py
 
 ```bash
 python step1_reserve_features.py
+python step2_match_tables.py
+……
 python step12_RF.py
 ```
 
