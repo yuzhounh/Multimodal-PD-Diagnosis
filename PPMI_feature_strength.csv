@@ -1,0 +1,23 @@
+feature name,strength
+age_at_visit,1
+SEX,1
+EDUCYRS,1
+fampd_bin,3
+BMI,1
+LEDD,3
+moca,2
+MCI_testscores,2
+quip,2
+ess,2
+rem,2
+gds,2
+stai_state,1
+stai_trait,1
+scopa,3
+orthostasis,2
+NHY,3
+pigd,3
+td_pigd,3
+updrs1_score,3
+updrs2_score,3
+updrs3_score,3

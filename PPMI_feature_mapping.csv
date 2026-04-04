@@ -1,0 +1,24 @@
+Feature Name,Abbreviation,FullName
+age_at_visit,Age,Age at visit (years)
+SEX,Sex,Sex (male/female)
+EDUCYRS,EDUCYRS,Education years
+fampd_bin,FH-PD,Family history of Parkinson's disease (binary)
+BMI,BMI,Body mass index (kg/m²)
+LEDD,LEDD,Levodopa equivalent daily dose (mg)
+orthostasis,OH,Orthostatic hypotension
+NHY,H&Y,Hoehn and Yahr stage
+pigd,PIGD,Postural instability and gait difficulty
+td_pigd,TD_PIGD,Tremor dominant vs. postural instability/gait difficulty subtype
+moca,MoCA,Montreal Cognitive Assessment score
+MCI_testscores,MCI,Mild cognitive impairment test scores
+quip,QUIP,Questionnaire for Impulsive-Compulsive Disorders
+ess,ESS,Epworth Sleepiness Scale
+rem,RBD,REM sleep behavior disorder
+gds,GDS,Geriatric Depression Scale
+stai_state,STAI-S,State-Trait Anxiety Inventory - State subscale
+stai_trait,STAI-T,State-Trait Anxiety Inventory - Trait subscale
+scopa,SCOPA-AUT,Scales for Outcomes in Parkinson's Disease - Autonomic
+updrs1_score,UPDRS-I,Unified Parkinson's Disease Rating Scale Part I
+updrs2_score,UPDRS-II,Unified Parkinson's Disease Rating Scale Part II
+updrs3_score,UPDRS-III,Unified Parkinson's Disease Rating Scale Part III
+COHORT,Cohort,Study cohort
