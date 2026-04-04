@@ -72,7 +72,7 @@ PPMI_Curated_Data (Excel)
 
 ## 环境依赖
 
-- Python 3.8+
+- Python 3.12+
 - pandas
 - numpy
 - scikit-learn
