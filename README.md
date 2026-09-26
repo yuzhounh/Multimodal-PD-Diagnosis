@@ -1,5 +1,9 @@
 # Multimodal Parkinson's Disease Diagnosis
 
+基于 PPMI 临床与 MRI ROI 特征的帕金森病研究分类流水线。
+
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-D4AF37?style=flat-square)](LICENSE)
+
 基于 PPMI（Parkinson's Progression Markers Initiative）数据集的多模态帕金森病（PD）与健康对照（HC）分类诊断系统。本项目融合临床/人口学特征与 MNI 空间 MRI ROI 影像特征，通过多级特征组合与机器学习模型实现帕金森病的辅助诊断。
 
 ## 项目概述
@@ -53,7 +57,7 @@ PPMI_Curated_Data (Excel)
   ├─ step7 ──→ PPMI_6_filled.csv
   ├─ step8 ──→ PPMI_7_propensity_score_matching.csv
   ├─ step9 ──→ result_9_statistical_analysis.csv（统计报告）
-  ├─ step10 ─→ PPMI_8_data_1.csv … PPMI_8_data_7.csv
+  ├─ step10 ─→ PPMI_8_data_1_weak_feature_set.csv … PPMI_8_data_7_MRI_with_strong_feature_set.csv
   ├─ step11 ─→ *_train.csv / *_test.csv
   └─ step12 ─→ results/（模型、指标、SHAP、ROC/PR 曲线）
 ```
@@ -69,6 +73,10 @@ PPMI_Curated_Data (Excel)
 | 5 | 弱临床 + MRI | 特征集 1 + 特征集 4 |
 | 6 | 弱/中等临床 + MRI | 特征集 2 + 特征集 4 |
 | 7 | 弱/中等/强临床 + MRI | 特征集 3 + 特征集 4 |
+
+## 运行前准备
+
+当前仓库没有依赖锁定文件；下方包名来自原说明，不能视为已验证的固定环境。运行前除临床 Excel 表外，还需核对 `PPMI_risk_factors.csv`、`PPMI_ROI_values_MNI.csv`、`PPMI_feature_strength.csv`、`AAL3v1_with_flags.csv` 与 `PPMI_feature_mapping.csv`。这些表在当前仓库中均已存在，表头应与选用的数据版本一致。
 
 ## 环境依赖
 
@@ -99,7 +107,7 @@ pip install pandas numpy scikit-learn xgboost optuna shap matplotlib seaborn sci
 python main.py
 ```
 
-`main.py` 将自动按编号顺序执行 `step1` 到 `step12` 的所有脚本，任何步骤失败将中止后续执行。
+`main.py` 按编号顺序执行脚本，同编号按文件名排序；子进程返回非零退出码时才会停止。`step11_split_data.py` 会捕获单个数据集的异常并写入 `result_11_data_split_summary.csv`，因此继续运行前还应检查该摘要中的失败项。
 
 ### 单独执行某一步
 
@@ -142,4 +150,4 @@ python step12_RF.py
 
 ## 许可证
 
-本项目仅用于学术研究。PPMI 数据使用须遵循其[数据使用协议](https://www.ppmi-info.org/access-data-specimens/download-data)。
+本项目面向学术研究，代码许可证见根目录的 [GNU GPL v3](LICENSE)。PPMI 数据使用须遵循其[数据使用协议](https://www.ppmi-info.org/access-data-specimens/download-data)。
